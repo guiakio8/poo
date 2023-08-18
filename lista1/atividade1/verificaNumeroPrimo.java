@@ -6,7 +6,7 @@ package lista1.atividade1;
 public class VerificaNumeroPrimo {
     public static void verificador() {
         int cont = 0;
-        int n = 13;
+        int n = 7;
 
         for (int i = 1; i <= n; i++) {
             if (n % i == 0) {
