@@ -1,18 +1,25 @@
 package revisao;
 
 import revisao.ferramenta.Calculadora;
+import java.util.Scanner;
 
 public class ClasseExecutavel {
     public static void main(String[] args) {
 
+        Scanner sc= new Scanner(System.in); 
         Calculadora calc = new Calculadora();
-        Calculadora calc2 = new Calculadora();
 
-        calc.a = 3;
-        calc.b = 5;
+        System.out.println("Insira o primeiro numero");
+        calc.a = sc.nextInt();
+        System.out.println("Insira o segundo numero");
+        calc.b = sc.nextInt();
 
-        calc.setOperador("aaa");
-        System.out.println(calc.operar());
+        System.out.println("Divisao [/] Multiplicacao [*] Soma [+] Subtracao[-]");
+        String ope;
+        ope = sc.next();
+        calc.setOperador(ope);
+
+        System.out.println("Resultado: " + calc.operar());
 
     }
 }
