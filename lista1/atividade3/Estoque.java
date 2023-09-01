@@ -1,9 +1,9 @@
 package lista1.atividade3;
 import java.util.ArrayList;
-import java.util.List;
+
 
 public class Estoque {
-    private List<Item> itens = new ArrayList<>();
+    private ArrayList<Item> itens = new ArrayList<>();
 
     public void adicionarItem(Item item) {
         itens.add(item);
@@ -17,7 +17,7 @@ public class Estoque {
         item.setQuantidade(novaQuantidade);
     }
 
-    public List<Item> listarItems() {
+    public ArrayList<Item> listarItems() {
         return itens;
     }
 }
