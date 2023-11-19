@@ -12,10 +12,14 @@ public class Main {
         Pessoa p1 = new Pessoa("Jota", "jota@rmail.com");
         Pessoa p2 = new Pessoa("Pedro", "pedro@rmail.com");
 
+        Pessoa p3 = new Pessoa();
+
         System.out.println(p1);
         System.out.println(p2);
 
-        dao.getPessoaById((long) 1);
+        dao.Truncate();
+
+        
     }
 
 }

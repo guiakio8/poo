@@ -7,7 +7,6 @@ import org.hibernate.cfg.Configuration;
 import poo.model.Pessoa;
 
 // Abre a conexao, insere, deleta, update, ou seja, faz as transações
-
 public class PessoaDAO {
 
     private static final SessionFactory sessionFactory;
@@ -80,4 +79,19 @@ public class PessoaDAO {
     }
 
 
+    public void Truncate(){
+        Transaction transaction = null;
+        try {
+            Session session = sessionFactory.openSession();
+            transaction = session.beginTransaction();
+            String hql = String.format("delete from %s", "Pessoa");
+            session.createQuery(hql).executeUpdate();
+            transaction.commit();
+            session.close();
+        } catch (Exception e) {
+            if (transaction != null) {
+                transaction.rollback();
+            }
+        }
+    }
 }
